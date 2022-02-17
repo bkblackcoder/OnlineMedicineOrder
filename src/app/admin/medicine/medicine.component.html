@@ -1,0 +1,27 @@
+<h1>Medicine Admin</h1>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Medicine Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medicine of medicine">
+          <td>{{medicine.id}}</td>
+          <td>{{medicine.name}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewMedicine(medicine.id)"">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-addmedicine *ngIf="action === 'add'" [medicine]="selectedMedicine" (medicineAddedEvent)="refreshData()"></app-addmedicine>
+    <app-viewmedicine> *ngIf="action === 'edit' || action === 'add'" [book]="selectedMedicine" (medicineDeletedEvent)="refreshData()"</app-viewmedicine>
+  </div>
+</div>

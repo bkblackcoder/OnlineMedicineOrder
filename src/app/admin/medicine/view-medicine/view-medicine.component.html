@@ -1,0 +1,27 @@
+<div class="medicineDetails">
+<h1>Medicine Details</h1>
+
+    <table>
+        <tr>
+            <td>Medicine Id</td>
+            <td>{{medicine.id}}</td>
+        </tr>
+        <tr>
+            <td>Medicine Name</td>
+            <td>{{medicine.name}}</td>
+        </tr>
+        <tr>
+            <td>Medicine Author</td>
+            <td>{{medicine.company}}</td>
+        </tr>
+        <tr>
+            <td>Medicine Price</td>
+            <td>{{medicine.price}}</td>
+        </tr>
+    </table>
+    <br>
+    <img src="{{medicine.retrievedImage}}" height="200" width="200">
+    <br><br>
+    <a class="btn btn-small btn-warning" (click)="editMedicine()">edit</a>
+    <a class="btn btn-small btn-danger" (click)="deleteMedicine()">delete</a>
+</div>
